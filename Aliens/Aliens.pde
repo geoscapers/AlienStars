@@ -29,8 +29,9 @@ void setup()
   frameRate(30);
   ellipseMode(RADIUS);
   // Set the starting position of the shape
-  xpos = width/2;
-  ypos = height/2;
+  xpos = width * 0.7f;
+  ypos = height * 0.2f;
+  rad = (int)( width * 0.06f);
   
   setupStars();
   
@@ -53,9 +54,9 @@ void draw()
   
   drawStars();
   
-  // Update the position of the shape
-  xpos = xpos + ( xspeed * xdirection );
-  ypos = ypos + ( yspeed * ydirection );
+  // Update the position of the moon - nope
+//  xpos = xpos + ( xspeed * xdirection );
+//  ypos = ypos + ( yspeed * ydirection );
   
   // Test to see if the shape exceeds the boundaries of the screen
   // If it does, reverse its direction by multiplying by -1
@@ -66,9 +67,12 @@ void draw()
     ydirection *= -1;
   }
 
-  // Draw the shape
+  // Draw the moon
+  fill(color(250, 255, 150, 100));
+  ellipse(xpos, ypos, rad*1.2f, rad*1.2f);
   fill(color(250, 255, 150));
   ellipse(xpos, ypos, rad, rad);
+
   
   //---------------------------------------
   iter ++;
