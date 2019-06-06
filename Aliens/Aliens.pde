@@ -24,7 +24,9 @@ int iter = 0;
 
 void setup() 
 {
-  size(640, 360);
+  // size(640, 360);
+  fullScreen();
+  noCursor();
   noStroke();
   frameRate(30);
   ellipseMode(RADIUS);
@@ -50,7 +52,7 @@ void setup()
 
 void draw() 
 {
-  background(102);
+  background(0, 10, 30);
   
   drawStars();
   
@@ -127,7 +129,7 @@ void draw()
 
 void drawAlien(float xpos, float ypos, boolean beam)
 {
-  int size = 50;
+    int size = width / 20;
   if(beam){
     fill(color(255,255,100+random(-30, 30)));
     triangle(xpos, ypos, xpos-size/5, height, xpos+size/5, height);
