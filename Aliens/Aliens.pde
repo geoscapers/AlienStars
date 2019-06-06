@@ -28,6 +28,8 @@ void setup()
   xpos = width/2;
   ypos = height/2;
   
+  setupStars();
+  
   //-------------------------------------
   // alien code
   float alienPosX = width/2;
@@ -43,6 +45,8 @@ void setup()
 void draw() 
 {
   background(102);
+  
+  drawStars();
   
   // Update the position of the shape
   xpos = xpos + ( xspeed * xdirection );
